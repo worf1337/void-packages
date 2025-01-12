@@ -1347,6 +1347,7 @@ libmicrohttpd.so.12 libmicrohttpd-0.9.73_1
 libmicrodns.so.1 libmicrodns-0.2.0_1
 libgit2.so.1.7 libgit2-1.7.2_1
 libgit2.so.1.8 libgit2-1.8-1.8.1_1
+libgit2.so.1.9 libgit2-1.9-1.9.0_1
 libgit2-glib-1.0.so.0 libgit2-glib-1.2.0_1
 libagg.so.2 agg-2.5_1
 libzzip-0.so.13 zziplib-0.13.62_1
@@ -1702,11 +1703,11 @@ libvtv.so.0 libvtv-6.3.0_1
 libatomic.so.1 libatomic-4.9.0_1
 libpcsclite.so.1 libpcsclite-1.8.11_1
 libpcscspy.so.0 libpcsclite-1.8.11_1
-libBulletDynamics.so.3.17 bullet-3.17_1
-libBulletCollision.so.3.17 bullet-3.17_1
-libLinearMath.so.3.17 bullet-3.17_1
-libBulletSoftBody.so.3.17 bullet-3.17_1
-libBullet3Common.so.3.17 bullet-3.17_1
+libBulletDynamics.so.3.25 bullet-3.25_1
+libBulletCollision.so.3.25 bullet-3.25_1
+libLinearMath.so.3.25 bullet-3.25_1
+libBulletSoftBody.so.3.25 bullet-3.25_1
+libBullet3Common.so.3.25 bullet-3.25_1
 libinotifytools.so.0 libinotify-tools-3.14_2
 libfswatch.so.13 libfswatch-1.17.1_1
 libopensc.so.11 libopensc-0.25.1_1
@@ -3146,6 +3147,8 @@ libwithsctp.so.1 lksctp-tools-1.0.17_1
 libnss_ldap.so.2 nss-pam-ldapd-0.9.7_4
 libunshield.so.0 libunshield-0.6_1
 libMyGUIEngine.so.3.4.2 libmygui-3.4.2_1
+libMyGUIEngine.so.3.4.3 libmygui-3.4.3_1
+libcollada-dom2.5-dp.so.0 collada-dom-2.5.0_1
 libproj.so.25 proj-9.1.1_1
 libnlopt.so.0 nlopt-2.4.2_1
 libeb.so.16 libeb-4.3.3_1
