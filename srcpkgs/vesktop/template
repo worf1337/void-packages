@@ -1,0 +1,30 @@
+# Template file for 'vesktop'
+pkgname=vesktop
+version=1.6.1
+revision=1
+hostmakedepends="pnpm python3 pkgconf"
+makedepends="electron35 libglib-devel"
+short_desc="Custom Discord app with improved Linux support"
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/Vencord/Vesktop"
+distfiles="https://github.com/Vencord/Vesktop/archive/v${version}.tar.gz"
+checksum=ba103cf8a9edef31eb78c1bc3d76e40151f84ff02b2da8fd2bc21a954841b523
+
+pre_build() {
+	vsed -i "/linux/s/^/        \"electronDist\": \"\\/usr\\/lib\\/electron35\",\n/" package.json
+}
+
+do_build() {
+	pnpm install --frozen-lockfile
+	pnpm buildLibVesktop
+	pnpm package:dir
+}
+
+do_install() {
+	vcopy "dist/linux-unpacked/." "/usr/lib/vesktop"
+	vinstall "${FILESDIR}/vesktop.desktop" 644 "/usr/share/applications"
+	vinstall "build/icon.svg" 644 "/usr/share/icons/hicolor/scalable/apps" "vesktop.svg"
+
+	vbin "${FILESDIR}/vesktop.sh" "vesktop"
+}
