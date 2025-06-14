@@ -1,0 +1,28 @@
+# Template file for 'i7z'
+pkgname=i7z
+version=0.28
+revision=1
+makedepends="ncurses-devel qt5-devel"
+depends=""
+short_desc="A better i7 (and now i3, i5) reporting tool for Linux"
+maintainer="Worf <me@worf.win>"
+license="GPL-2.0-or-later"
+homepage="https://github.com/afontenot/i7z"
+distfiles="https://github.com/afontenot/i7z/archive/refs/tags/v${version}.tar.gz"
+checksum=a89e31ead801231ef089266f8863b11d2ec1542cdfa20e9c93220d27dbcc7685
+
+do_build() {
+
+	make
+
+	cd src/GUI
+	qmake-qt5
+	make
+}
+
+do_install() {
+	
+	vman doc/i7z.man i7z.1
+	vbin i7z
+	vbin src/GUI/i7z_GUI
+}

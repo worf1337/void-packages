@@ -1,0 +1,44 @@
+From 1418957a6f7e669d906741c65275ca8197b18013 Mon Sep 17 00:00:00 2001
+From: rilysh <nightquick@proton.me>
+Date: Tue, 9 Jan 2024 16:58:31 +0530
+Subject: [PATCH] fix build: use static to mark timespec struct for current
+ unit only
+
+Currently, on GNU/Linux, the build fails because of
+conflicting definition of the timespec structure. As
+both definition of timespec structures (in two units)
+don't rely or share with each other, mark them static.
+This also fixes the build.
+
+Signed-off-by: rilysh <nightquick@proton.me>
+---
+ src/i7z_Dual_Socket.c   | 2 +-
+ src/i7z_Single_Socket.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/i7z_Dual_Socket.c b/src/i7z_Dual_Socket.c
+index 8e85755..506e1a8 100644
+--- a/src/i7z_Dual_Socket.c
++++ b/src/i7z_Dual_Socket.c
+@@ -37,7 +37,7 @@ float Read_Voltage_CPU(int cpu_num);
+ extern struct program_options prog_options;
+ FILE *fp_log_file;
+ 
+-struct timespec global_ts;
++static struct timespec global_ts;
+ extern FILE *fp_log_file_freq_1, *fp_log_file_freq_2;
+ 
+ extern char* CPU_FREQUENCY_LOGGING_FILE_single;
+diff --git a/src/i7z_Single_Socket.c b/src/i7z_Single_Socket.c
+index fa70303..033a30e 100644
+--- a/src/i7z_Single_Socket.c
++++ b/src/i7z_Single_Socket.c
+@@ -35,7 +35,7 @@ int Read_Thermal_Status_CPU(int cpu_num);
+ extern struct program_options prog_options;
+ extern FILE *fp_log_file_freq;
+ 
+-struct timespec global_ts;
++static struct timespec global_ts;
+ 
+ extern char* CPU_FREQUENCY_LOGGING_FILE_single;
+ extern char* CPU_FREQUENCY_LOGGING_FILE_dual;
