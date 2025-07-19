@@ -1,0 +1,22 @@
+# Template file for 'nullfs'
+pkgname=nullfs
+version=0.19
+revision=1
+depends="dkms"
+short_desc="Virtual black hole filesystem that behaves like /dev/null"
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/abbbi/nullfsvfs"
+distfiles="https://github.com/abbbi/nullfsvfs/archive/refs/tags/v${version}.tar.gz"
+checksum=90b0cfddefd4c105a3254bf5e0104429b305e5bd57e51a1b625669ec1b64cae6
+dkms_modules="$pkgname $version"
+
+pre_build() {
+	vsed -i debian/nullfsvfs.dkms -e "s/#MODULE_VERSION#/${version}/"
+}
+
+do_install() {
+	vinstall debian/nullfsvfs.dkms 0644 /usr/src/nullfs-${version} dkms.conf
+	vinstall Makefile  0644 /usr/src/nullfs-${version}
+	vinstall nullfs.c 0644 /usr/src/nullfs-${version}
+}
