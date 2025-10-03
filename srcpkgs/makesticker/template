@@ -1,0 +1,13 @@
+# Template file for 'makesticker'
+pkgname=makesticker
+version=1.0.0
+revision=1
+build_style=go
+short_desc="Project SEKAI CLI sticker maker"
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/MatusOllah/makesticker"
+distfiles="https://github.com/MatusOllah/makesticker/archive/refs/tags/v${version}.tar.gz"
+checksum=05979199c557b429f07e843a28fa5a320c0459cdd5ecc2a03d5133a2b9836472
+go_import_path=github.com/MatusOllah/makesticker
+
