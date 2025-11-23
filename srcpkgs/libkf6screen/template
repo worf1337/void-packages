@@ -1,6 +1,6 @@
 # Template file for 'libkf6screen'
 pkgname=libkf6screen
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF
@@ -14,7 +14,7 @@ maintainer="John <me@johnnynator.dev>"
 license="LGPL-2.1-or-later"
 homepage="https://invent.kde.org/plasma/libkscreen"
 distfiles="${KDE_SITE}/plasma/${version}/libkscreen-${version}.tar.xz"
-checksum=28099754348a7d3af74d79b443d7fde8e6a2b32c6e5491b520180d65d1e1ba61
+checksum=1e0036c4886824bbeb30f3ce558b9e4d10373885e60087d6d91553f27374d22f
 
 libkf6screen-devel_package() {
 	short_desc+=" - development"
