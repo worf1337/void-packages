@@ -1,6 +1,6 @@
 # Template file for 'oxygen-qt5'
 pkgname=oxygen-qt5
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DBUILD_QT6=OFF"
@@ -14,7 +14,7 @@ maintainer="John <me@johnnynator.dev>"
 license="LGPL-2.1-or-later, GPL-2.0-or-later"
 homepage="https://invent.kde.org/plasma/oxygen"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname%-qt5}-${version}.tar.xz"
-checksum=d349c7928f068982337bb45481ec19d942a68f47e0f0a25eb839ea2ff358556a
+checksum=379f98db9d829b975b0a59a38a56d9a324feac4bb6f95fc20a5ea5a2203d6d94
 
 post_install() {
 	rm -rf ${DESTDIR}/usr/share
