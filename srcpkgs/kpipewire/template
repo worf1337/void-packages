@@ -1,6 +1,6 @@
 # Template file for 'kpipewire'
 pkgname=kpipewire
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DKDE_INSTALL_QMLDIR=lib/qt6/qml"
@@ -16,7 +16,7 @@ maintainer="John <me@johnnynator.dev>"
 license="GPL-3.0-or-later"
 homepage="https://invent.kde.org/plasma/kpipewire"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=5aaf457d08fc52dea254eaa5b7e05cf0e915001411f4fdd6f2f4aa0b1290fe89
+checksum=0f0f884057c79026ce69a93f2ed96d33581400155fec8bddce2d2ba3b197dcc5
 
 do_check() {
 	cd build
