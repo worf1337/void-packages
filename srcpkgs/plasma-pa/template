@@ -1,6 +1,6 @@
 # Template file for 'plasma-pa'
 pkgname=plasma-pa
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake -Wno-dev
@@ -20,4 +20,4 @@ maintainer="John <me@johnnynator.dev>"
 license="LGPL-2.1-or-later"
 homepage="https://invent.kde.org/plasma/plasma-pa"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=85178649dfb37f65d838de54151b13f0a145c417acc879b53f62f4a6d2f041a1
+checksum=5b2cf0cb2c6ad671a38b9a232784952ca5619730f7cde300eae329bc56a8b2ee
