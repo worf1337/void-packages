@@ -1,6 +1,6 @@
 # Template file for 'kwin-x11'
 pkgname=kwin-x11
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 build_helper=qemu
@@ -32,7 +32,7 @@ maintainer="John <me@johnnynator.dev>"
 license="GPL-2.0-or-later AND MIT"
 homepage="https://invent.kde.org/plasma/kwin-x11"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=632e6b14c7d302b6efec62ab08426a924ca720cb6fb207f0f922e59f7f689256
+checksum=ae7515a590d79f8613dc322b4413724cb0466771036986f47d012cece79e9bd9
 
 kwin-x11-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision}"
