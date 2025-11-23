@@ -1,6 +1,6 @@
 # Template file for 'kgamma'
 pkgname=kgamma
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -14,7 +14,7 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="https://invent.kde.org/plasma/kgamma"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=538353ffcdfb7e6d66e16b1a3fafffa478b293c7d57656ca71016f2aeb782eee
+checksum=81f6b9fd3b9e6145d11f39df91497570b245d78c1e94c3ee1e61d62fb803960d
 
 kgamma5_package() {
 	metapackage=yes
