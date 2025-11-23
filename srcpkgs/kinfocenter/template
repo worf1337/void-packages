@@ -1,6 +1,6 @@
 # Template file for 'kinfocenter'
 pkgname=kinfocenter
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -18,4 +18,4 @@ maintainer="John <me@johnnynator.dev>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later, GFDL-1.2-only"
 homepage="https://invent.kde.org/plasma/kinfocenter"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=ffe09a169c76c79ce551ef2b4eee97a6e1d8726d0b1a2fc247f78da188604649
+checksum=c2b464ed580a0823d8d171fb2d1a533a6aa2da1b88b4142d360453c152834304
