@@ -1,6 +1,6 @@
 # Template file for 'plasma-vault'
 pkgname=plasma-vault
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -15,4 +15,4 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later, LGPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://invent.kde.org/plasma/plasma-vault"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=c055f858687eb6f6226d38cf8455bdf55106e9efa6bdb3d7b03b90a9ffa6ce69
+checksum=e61e4750b533b287e40140339c3f5de203e63e90604f20a44e06e81dca5c2b8f
