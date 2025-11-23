@@ -1,6 +1,6 @@
 # Template file for 'ocean-sound-theme'
 pkgname=ocean-sound-theme
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules qt6-base"
@@ -10,4 +10,4 @@ maintainer="Rose <rose@pinkro.se>"
 license="CC-BY-SA-4.0"
 homepage="https://invent.kde.org/plasma/ocean-sound-theme"
 distfiles="${KDE_SITE}/plasma/${version}/ocean-sound-theme-${version}.tar.xz"
-checksum=7e3bb59309e54f8aa3e6303a70dac0eba91662e0a0709d041fd073722f06ee91
+checksum=412983b1156f2025fc15815075f29b1b96f3bc2de15c540cea256245211841f6
