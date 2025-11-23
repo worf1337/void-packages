@@ -1,6 +1,6 @@
 # Template file for 'kscreen'
 pkgname=kscreen
-version=6.5.2
+version=6.5.3
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF6_HOST_TOOLING=/usr/lib/cmake
@@ -18,4 +18,4 @@ maintainer="John <me@johnnynator.dev>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://invent.kde.org/plasma/kscreen"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=9c814fd42f9730196fc0c9e6230a85bfc8004c0e5732b04879d35db4d7b9c468
+checksum=7f09ef7546cef2484dffe091853d6928ada38a776d5fbf0b10d47ac96de9a0c7
