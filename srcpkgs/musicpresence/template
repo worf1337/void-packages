@@ -1,0 +1,27 @@
+# Template file for 'musicpresence'
+pkgname=musicpresence
+version=2.3.4
+revision=1
+depends="glibc libglvnd qt6-core qt6-gui qt6-network qt6-websockets qt6-widgets libgcc libgcrypt liblz4 liblzma libstdc++"
+short_desc="Discord music status that works with any media player"
+maintainer="Worf <me@worf.win>"
+license="custom:Proprietary"
+homepage="https://github.com/ungive/discord-music-presence"
+changelog="https://raw.githubusercontent.com/ungive/discord-music-presence/refs/heads/master/CHANGELOG.md"
+distfiles="https://github.com/ungive/discord-music-presence/releases/download/v${version}/musicpresence-${version}-linux-x86_64.tar.gz"
+checksum=c79211f51332efbfe15f7372e98ff7fc45c307b0afb83b892211aa6591c46763
+repository=nonfree
+noverifyrdeps=yes
+archs="x86_64"
+restricted=yes
+
+do_install() {
+	find ${wrksrc} -type f -name '*.so*' -print -delete # Delete redundant libraries
+	vmkdir /opt/musicpresence
+	vmkdir /usr/share/applications
+	vcopy "usr/share/applications" "/usr/share"
+	vcopy "usr/share/musicpresence" "/opt"
+	vmkdir /usr/bin
+	ln -s /opt/musicpresence/bin/musicpresence ${DESTDIR}/usr/bin/musicpresence
+	vlicense ${FILESDIR}/LICENSE
+}
