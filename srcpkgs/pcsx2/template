@@ -1,0 +1,21 @@
+# Template file for 'pcsx2'
+pkgname=pcsx2
+version=2.6.2
+revision=1
+build_style=cmake
+archs="x86_64"
+hostmakedepends="ninja pkgconf clang"
+makedepends="alsa-lib-devel libaio-devel ffmpeg6-devel libcurl-devel dbus-devel libdecor-devel libpng-devel freetype-devel gtk+3-devel libgudev-devel harfbuzz-devel libinput-devel libpcap-devel pipewire-devel pulseaudio-devel openssl-devel eudev-libudev-devel wayland-devel libX11-devel libxcb-devel libXext-devel libXrandr-devel zlib-devel liblz4-devel SDL3-devel plutovg plutosvg shaderc extra-cmake-modules libbacktrace qt6-base-devel qt6-tools-devel qt6-base-private-devel kddockwidgets-devel"
+depends="shaderc"
+short_desc="PlayStation 2 Emulator"
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://pcsx2.net"
+distfiles="https://github.com/PCSX2/pcsx2/archive/refs/tags/v${version}.tar.gz"
+checksum=b53ae9b4aeb727cf1b84755f6ba90007cd14f24c1c3d18c67c4002d4dc9e5344
+configure_args="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DPACKAGE_MODE=ON"
+
+post_install() {
+	vinstall .github/workflows/scripts/linux/pcsx2-qt.desktop 644 /usr/share/applications
+	vinstall bin/resources/icons/AppIconLarge.png 644 /usr/share/pixmaps PCSX2.png
+}
