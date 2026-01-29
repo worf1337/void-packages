@@ -1,6 +1,6 @@
 # Template file for 'plumeimpactor'
 pkgname=plumeimpactor
-version=2.0.0
+version=2.0.3
 revision=1
 build_style=cargo
 make_build_args="--bins --workspace"
@@ -13,7 +13,7 @@ maintainer="Worf <me@worf.win>"
 license="MIT"
 homepage="https://github.com/khcrysalis/PlumeImpactor"
 distfiles="https://github.com/khcrysalis/PlumeImpactor/archive/refs/tags/v${version}.tar.gz"
-checksum=f5c8ea81c84d3e4a3173a020d95580b7096e2ba1164420753bcc15b984cd2ab8
+checksum=b315011166268fb152f96a6af592e30a26848a435629f6f1386542af13a76a6c
 
 
 post_install() {
