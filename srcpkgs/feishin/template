@@ -1,0 +1,26 @@
+# Template file for 'feishin'
+pkgname=feishin
+version=1.4.2
+revision=1
+hostmakedepends="pnpm"
+short_desc="Modern Navidrome and Jellyfin music client."
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/jeffvli/feishin"
+distfiles="https://github.com/jeffvli/feishin/archive/refs/tags/v${version}.tar.gz"
+checksum=1a358cd766026b77a38d4a203b895bd1f66cba892c58515b53ba0373a9d5966d
+
+do_build() {
+	pnpm i --frozen-lockfile
+	pnpm run build
+	pnpm run package:dev
+}
+
+do_install() {
+	vmkdir /usr/lib/feishin
+	vcopy "dist/linux-unpacked/*" "/usr/lib/feishin"
+	vinstall "${FILESDIR}/feishin.desktop" 644 "/usr/share/applications"
+	vinstall "dist/linux-unpacked/resources/assets/icons/icon.png" 644 "/usr/share/pixmaps" "feishin.png"
+	vmkdir /usr/bin
+	ln -s /usr/lib/feishin/feishin ${DESTDIR}/usr/bin/feishin
+}
