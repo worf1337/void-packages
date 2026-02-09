@@ -1,6 +1,6 @@
 # Template file for 'vesktop'
 pkgname=vesktop
-version=1.6.3
+version=1.6.4
 revision=1
 hostmakedepends="pnpm python3 pkgconf"
 makedepends="electron35 libglib-devel"
@@ -9,7 +9,7 @@ maintainer="Worf <me@worf.win>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/Vencord/Vesktop"
 distfiles="https://github.com/Vencord/Vesktop/archive/v${version}.tar.gz"
-checksum=19f131dcfaa48df02268bbda538389c7e1ce63c80420fa617089a83253dba702
+checksum=afd5837f884b29db08285a0167ca16a2ebe86747a7496d7590423c575dac6569
 
 pre_build() {
 	vsed -i "/linux/s/^/        \"electronDist\": \"\\/usr\\/lib\\/electron35\",\n/" package.json
