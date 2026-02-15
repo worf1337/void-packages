@@ -1,6 +1,6 @@
 # Template file for 'vesktop'
 pkgname=vesktop
-version=1.6.4
+version=1.6.5
 revision=1
 hostmakedepends="pnpm python3 pkgconf"
 makedepends="electron35 libglib-devel"
@@ -9,11 +9,11 @@ maintainer="Worf <me@worf.win>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/Vencord/Vesktop"
 distfiles="https://github.com/Vencord/Vesktop/archive/v${version}.tar.gz"
-checksum=afd5837f884b29db08285a0167ca16a2ebe86747a7496d7590423c575dac6569
+checksum=4bb9b5e1acaf17a5f145931008fe4015f9b8c1116b769e1a55a68d5483f238fc
 
-pre_build() {
-	vsed -i "/linux/s/^/        \"electronDist\": \"\\/usr\\/lib\\/electron35\",\n/" package.json
-}
+#pre_build() {
+#	vsed -i "/linux/s/^/        \"electronDist\": \"\\/usr\\/lib\\/electron35\",\n/" package.json
+#}
 
 do_build() {
 	pnpm install --frozen-lockfile
