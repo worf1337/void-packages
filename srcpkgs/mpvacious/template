@@ -1,0 +1,15 @@
+# Template file for 'mpvacious'
+pkgname=mpvacious
+version=26.2.13.0
+revision=1
+depends="mpv curl"
+short_desc="Adds mpv keybindings to create Anki cards from movies and TV shows."
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/Ajatt-Tools/mpvacious"
+distfiles="https://github.com/Ajatt-Tools/mpvacious/archive/refs/tags/v${version}.tar.gz"
+checksum=0d64a4600dc3a96359db4e6805e9b3476a7c8e5f731ec9156fe6cc37573bba17
+
+do_install() {
+	make PREFIX=${DESTDIR}/etc/mpv VERSION=${version} install
+}
