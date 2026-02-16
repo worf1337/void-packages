@@ -1,0 +1,17 @@
+# Template file for 'mp3gain'
+pkgname=mp3gain
+version=1.6.2
+revision=1
+build_style=gnu-makefile
+make_build_args="OSTYPE=linux"
+makedepends="mpg123-devel"
+short_desc="Lossless MP3 normaliser with statistical analysis"
+maintainer="Worf <me@worf.win>"
+license="GPL"
+homepage="https://sourceforge.net/projects/mp3gain/"
+distfiles="${SOURCEFORGE_SITE}/${pkgname}/${pkgname}-${version//./_}-src.zip"
+checksum=5cc04732ef32850d5878b28fbd8b85798d979a025990654aceeaa379bcc9596d
+
+do_install() {
+	vbin mp3gain
+}
