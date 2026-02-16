@@ -1,0 +1,12 @@
+# Template file for 'impd'
+pkgname=impd
+version=26.2.11.0
+revision=1
+build_style=gnu-makefile
+depends="bash file gawk ffmpeg mpd xdg-user-dirs"
+short_desc="Manage passive immersion and create condensed audio."
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/Ajatt-Tools/impd"
+distfiles="https://github.com/Ajatt-Tools/impd/archive/refs/tags/v${version}.tar.gz"
+checksum=3b3a2656caf3a0fc1e4e3876cf72d65cd6674d8dc52ce78bd449aa9e911a73fb
