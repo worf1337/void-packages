@@ -1,0 +1,15 @@
+# Template file for 'crqt-ng'
+pkgname=crqt-ng
+version=1.0.15
+revision=1
+build_style=cmake
+configure_args="-D USE_QT=QT6"
+hostmakedepends=""
+makedepends="qt6-tools-devel crengine-ng-devel"
+depends=""
+short_desc="Cross-platform open source e-book reader using crengine-ng"
+maintainer="Worf <me@worf.win>"
+license="GPL-2.0-or-later"
+homepage="https://gitlab.com/coolreader-ng/crqt-ng"
+distfiles="https://gitlab.com/coolreader-ng/crqt-ng/-/archive/${version}/crqt-ng-${version}.tar.gz"
+checksum=bbcfdece9b72958c3b9d8b894ffcf1e944d39b283d268984774dc32d8c45068d
