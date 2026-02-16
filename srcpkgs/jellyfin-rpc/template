@@ -1,0 +1,12 @@
+# Template file for 'jellyfin-rpc'
+pkgname=jellyfin-rpc
+version=1.3.4
+revision=1
+build_style=cargo
+make_install_args="--path jellyfin-rpc-cli"
+short_desc="Discord rich presence for Jellyfin"
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/JustRadical/jellyfin-rpc"
+distfiles="https://github.com/JustRadical/jellyfin-rpc/archive/refs/tags/${version}.tar.gz"
+checksum=8f7cff3ac0240c9cdbf21e353d3e928fb9cf715b63d11e4a0e63faa05103ba52
