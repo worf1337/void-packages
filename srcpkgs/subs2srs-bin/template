@@ -1,0 +1,32 @@
+# Template file for 'subs2srs-bin'
+pkgname=subs2srs-bin
+version=29.7
+_build_time=2023-02-23-13-35
+revision=1
+hostmakedepends="p7zip"
+makedepends=""
+depends="mono ffmpeg mp3gain mkvtoolnix-gui"
+short_desc="Create Anki decks based on foreign media"
+maintainer="Worf <me@worf.win>"
+license="GPL"
+homepage="http://subs2srs.sourceforge.net/"
+#changelog=""
+distfiles="https://github.com/nihil-admirari/subs2srs-net48-builds/releases/download/${_build_time}/subs2srs_v${version}.zip"
+checksum=70b71f73b26e35cf0d202522656142432d75287a0910907d8f023271cd5f200b
+
+do_install() {
+	vmkdir /opt/subs2srs
+	vmkdir /usr/bin
+	vmkdir /usr/share/applications
+	vmkdir /usr/share/licenses/subs2srs
+	
+	vcopy $wrksrc/* /opt/subs2srs
+	vbin ${FILESDIR}/subs2srs.sh subs2srs
+	vinstall ${FILESDIR}/subs2srs.desktop 644 /usr/share/applications/
+	vinstall ${FILESDIR}/subsretimer.desktop 644 /usr/share/applications/
+
+	ln -sf /usr/bin/ffmpeg ${DESTDIR}/opt/subs2srs/Utils/ffmpeg/ffmpeg.exe
+	ln -sf /usr/bin/mp3gain ${DESTDIR}/opt/subs2srs/Utils/mp3gain/mp3gain.exe
+	ln -sf /usr/bin/mkvextract ${DESTDIR}/opt/subs2srs/Utils/mkvtoolnix/mkvextract.exe
+	ln -sf /usr/bin/mkvinfo ${DESTDIR}/opt/subs2srs/Utils/mkvtoolnix/mkvinfo.exe
+}
