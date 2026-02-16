@@ -1,0 +1,27 @@
+# Template file for 'crengine-ng'
+pkgname=crengine-ng
+version=0.9.13
+revision=1
+build_style=cmake
+hostmakedepends=""
+configure_args="-DCMAKE_BUILD_TYPE=Release"
+makedepends="freetype-devel harfbuzz-devel zlib-devel libzstd-devel libpng-devel libjpeg-turbo-devel libunibreak-devel libutf8proc-devel"
+depends=""
+short_desc="Cross-platform library designed to implement text viewers and e-book readers"
+maintainer="Worf <me@worf.win>"
+license="GPL-2.0-or-later"
+homepage="https://gitlab.com/coolreader-ng/crengine-ng"
+distfiles="https://gitlab.com/coolreader-ng/crengine-ng/-/archive/${version}/crengine-ng-${version}.tar.gz"
+checksum=6e358143f67cc198e4926656be93cb45d474855fe707b317af28ef0d8d6e1097
+
+
+crengine-ng-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove "usr/lib/*.a"
+		vmove "usr/lib/*.so"
+	}
+}
