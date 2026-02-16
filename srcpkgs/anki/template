@@ -1,21 +1,51 @@
 # Template file for 'anki'
 pkgname=anki
-version=2.1.15
-revision=7
-build_style=gnu-makefile
-depends="python3-PyQt5-webengine python3-requests python3-SQLAlchemy
- python3-PyAudio python3-mpv python3-Markdown python3-send2trash
- python3-BeautifulSoup4 python3-decorator python3-jsonschema"
+version=25.09.2
+revision=1
+hostmakedepends="cargo hatchling pkgconf protobuf  python3-pyqt6-devel-tools python3-wheel ninja nodejs rsync unzip uv yarn git python3-installer"
+makedepends="libzstd-devel rust-std sqlite-devel"
+depends="lame mpv sqlite python3 python3-PyAudio python3-BeautifulSoup4 python3-waitress python3-requests python3-decorator python3-markdown2 python3-orjson python3-protobuf python3-pysocks python3-distro python3-Flask-Cors python3-jsonschema python3-send2trash python3-certifi python3-pyqt6 python3-pyqt6-declarative python3-pyqt6-gui python3-pyqt6-network python3-pyqt6-printsupport python3-pyqt6-webengine python3-pyqt6-webchannel python3-pyqt6-widgets qt6-svg qt6-multimedia python3-Flask python3-Markdown python3-typing_extensions"
 short_desc="Spaced repetition flashcard program"
-maintainer="Orphaned <orphan@voidlinux.org>"
-license="AGPL-3.0-or-later"
 homepage="https://apps.ankiweb.net"
-changelog="https://apps.ankiweb.net/docs/changes.html"
-distfiles="https://apps.ankiweb.net/downloads/archive/anki-$version-source.tgz"
-checksum=5a53760164c77d619f55107a13099cffe620566a7f610b61b6c4b52487f3bb89
+license="AGPL-3.0-or-later"
+maintainer="Worf <me@worf.win>"
+CFLAGS+=' -ffat-lto-objects'
 
-python_version=3
+do_fetch() {
+	git clone --branch ${version} https://github.com/ankitects/anki $wrksrc
+	git -C $wrksrc submodule init
+	git -C $wrksrc -c protocol.file.allow=always submodule update ftl/core-repo ftl/qt-repo
+}
 
-post_install() {
-	vlicense LICENSE
+do_configure() {
+	cargo fetch --locked --target $(rustc --print host-tuple)
+	rm yarn.lock
+	yarn install --immutable --modules-folder out/node_modules --ignore-scripts
+	ln -s out/node_modules ./
+	python -m venv --system-site-packages --without-pip out/pyenv/
+}
+
+do_build() {
+	export PYTHON_BINARY=/usr/bin/python
+	export PROTOC_BINARY=/usr/bin/protoc
+	export NODE_BINARY=/usr/bin/node
+	export YARN_BINARY=/usr/bin/yarn
+	export UV_BINARY=/usr/bin/uv
+	export RELEASE=2
+	export OFFLINE_BUILD=1
+	export CARGO_TARGET_DIR=$PWD/out/rust
+	cargo build -p runner --release
+	./out/rust/release/runner build -- wheels -v
+}
+
+do_install() {
+	for file in out/wheels/*.whl; do
+		python -m installer --destdir="$DESTDIR" "$file"
+	done
+
+	vinstall qt/launcher/lin/anki.desktop 644 /usr/share/applications
+	vinstall qt/launcher/lin/anki.png 644 /usr/share/pixmaps
+	vinstall qt/launcher/lin/anki.xpm 644 /usr/share/pixmaps
+	vman qt/launcher/lin/anki.1
+	vinstall qt/launcher/lin/anki.xml 644 /usr/share/mime/application
 }
