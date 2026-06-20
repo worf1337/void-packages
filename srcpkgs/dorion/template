@@ -1,0 +1,32 @@
+# Template file for 'dorion'
+pkgname=dorion
+version=6.12.2
+revision=1
+build_helper=rust
+hostmakedepends="pnpm cargo pkg-config cmake"
+makedepends="libwebkit2gtk41-devel libayatana-appindicator-devel openssl-devel"
+depends=""
+short_desc="Tiny alternative Discord client"
+maintainer="Worf <me@worf.win>"
+license="GPL-3.0-or-later"
+homepage="https://spikehd.dev/projects/dorion/"
+distfiles="https://github.com/SpikeHD/Dorion/archive/refs/tags/v${version}.tar.gz"
+checksum=30a494d9ce589b33941377923fb7bd5ed5aaebb87928b6d4e0ecc4ba53877d7c
+
+pre_build() {
+	pnpm i
+	pnpm shupdate
+	pnpm build:updater
+}
+
+do_build() {
+	pushd src-tauri/extension_webkit
+	cmake .
+	cmake --build .
+	popd
+	pnpm tauri build
+}
+
+do_install() {
+	echo test
+}
