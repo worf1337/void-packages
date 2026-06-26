@@ -1,0 +1,15 @@
+# Template file for 'iOpenPod'
+pkgname=iOpenPod
+version=1.0.61
+revision=1
+#build_wrksrc=
+build_style=python3-pep517
+hostmakedepends="hatchling"
+makedepends=""
+depends="ffmpeg chromaprint python3-Pillow python3-certifi python3-dateutil python3-feedparser python3-mutagen python3-numpy python3-packaging python3-pycryptodome python3-pyqt6 python3-pyqt6-gui python3-pyqt6-widgets python3-requests python3-tqdm python3-usb wasmtime"
+short_desc="Apple iPod sync tool"
+maintainer="Worf <me@worf.win>"
+license="MIT"
+homepage="https://therealsavi.github.io/iOpenPod/"
+distfiles="https://github.com/TheRealSavi/iOpenPod/archive/refs/tags/v${version}.tar.gz"
+checksum=a1def200030e107ac7064d69990d74eb806d5845bd38e2f6e4afd1a1e71a9d93
