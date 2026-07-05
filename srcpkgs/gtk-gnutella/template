@@ -1,0 +1,21 @@
+# Template file for 'gtk-gnutella'
+pkgname=gtk-gnutella
+version=1.2.3
+revision=1
+build_style="configure"
+configure_script="./build.sh"
+configure_args="--prefix=/usr --configure-only --disable-malloc"
+hostmakedepends="gettext pkgconf"
+makedepends="libglib-devel zlib-ng-devel dbus-devel gtk+-devel gnutls-devel"
+short_desc="GTK2-based Gnutella client"
+maintainer="Worf <me@worf.win>"
+license="GPL-2.0-or-later"
+homepage="https://gtk-gnutella.sourceforge.io"
+changelog="https://github.com/gtk-gnutella/gtk-gnutella/raw/refs/heads/devel/ChangeLog"
+distfiles="${SOURCEFORGE_SITE}/project/gtk-gnutella/gtk-gnutella/${version}/gtk-gnutella-${version}.tar.xz"
+checksum=dd4ba09de6ff7e928c746e6aaeb2fb6b023c7b3de4ad247ce9f0ee9ba0092ef0
+nostrip=yes
+
+do_install() {
+	make install INSTALL_PREFIX=${DESTDIR}
+}

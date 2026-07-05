@@ -1,0 +1,27 @@
+From 450780f02fe227152907e9d92508a3a930175785 Mon Sep 17 00:00:00 2001
+From: Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Date: Fri, 13 Dec 2024 08:57:25 +0100
+Subject: [PATCH] Increase the minimum thread stack size requested.
+
+There were reports that the ADNS thread was overflowing its stack on
+some systems.
+---
+ src/lib/thread.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/lib/thread.h b/src/lib/thread.h
+index 3f4111dfb0..3c8d433b17 100644
+--- a/src/lib/thread.h
++++ b/src/lib/thread.h
+@@ -69,9 +69,9 @@ typedef unsigned int thread_key_t;	/* Local thread storage key */
+ #define THREAD_SUSPEND_TIMEOUT	90	/**< secs: thread max suspension time */
+ 
+ /**
+- * Minimum thread stack requested: 24K on 32-bit systems, 32K on 64-bit ones.
++ * Minimum thread stack requested: 48K on 32-bit systems, 80K on 64-bit ones.
+  */
+-#define THREAD_STACK_MIN	MAX(4096 * PTRSIZE, 24576)
++#define THREAD_STACK_MIN	(8192 * (PTRSIZE + 2))
+ 
+ /**
+  * Thread creation flags.
