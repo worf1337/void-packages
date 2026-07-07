@@ -1,0 +1,14 @@
+# Template file for 'librespot'
+pkgname=librespot
+version=0.0.10
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends="python3-defusedxml python3-protobuf python3-pycryptodomex python3-requests python3-websocket-client python3-zeroconf pyogg"
+short_desc="Open source Spotify client"
+maintainer="Worf <snowy@riseup.net>"
+license="Apache-2.0"
+homepage="https://github.com/kokarare1212/librespot-python"
+distfiles="https://github.com/kokarare1212/librespot-python/archive/refs/tags/v${version}.tar.gz"
+checksum=781f9d4d9b01e27d59a0794061a6f82cb34f0ec14b1225a8010b471ebdc9709f
