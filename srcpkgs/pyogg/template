@@ -1,0 +1,14 @@
+# Template file for 'pyogg'
+pkgname=pyogg
+version=0.6.14a1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends=""
+short_desc="OGG Vorbis, Opus and FLAC bindings for Python"
+maintainer="Worf <snowy@riseup.net>"
+license="Unlicense"
+homepage="https://github.com/TeamPyOgg/PyOgg"
+distfiles="https://github.com/TeamPyOgg/PyOgg/archive/refs/tags/${version}.tar.gz"
+checksum=90ce4d7c62ba1136d5b0ba1c3af8a966da72f5272e404c8acbdf5b97ba725917
