@@ -1,0 +1,19 @@
+# Template file for 'python3-m3u8'
+pkgname=python3-m3u8
+version=6.0.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+makedepends=""
+depends=""
+short_desc="Python m3u8 parser for HLS transmissions"
+maintainer="Worf <snowy@riseup.net>"
+license="MIT"
+homepage="https://github.com/globocom/m3u8"
+distfiles="https://github.com/globocom/m3u8/archive/refs/tags/${version}.tar.gz"
+checksum=6521e02d0c3295999c14e348d7c6d4f13b1ba33ba14e1b9a3a6d5b8170ad3efb
+
+
+post_install() {
+	vlicense LICENSE
+}
