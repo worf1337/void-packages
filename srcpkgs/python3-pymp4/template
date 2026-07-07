@@ -1,0 +1,13 @@
+# Template file for 'python3-pymp4'
+pkgname=python3-pymp4
+version=1.4.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core"
+depends="python3-construct"
+short_desc="Python MP4 parser and toolkit"
+maintainer="Worf <snowy@riseup.net>"
+license="Apache-2.0"
+homepage="https://github.com/beardypig/pymp4"
+distfiles="https://github.com/beardypig/pymp4/archive/refs/tags/v${version}.tar.gz"
+checksum=215a515bfe2fac3ef06cc9bd2814c6745c782740756d0f3110e945f752fd345f
