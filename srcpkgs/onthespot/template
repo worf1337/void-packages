@@ -1,0 +1,13 @@
+# Template file for 'onthespot'
+pkgname=onthespot
+version=1.8.0beta5
+revision=1
+build_style=python3-pep517
+short_desc="GUI music downloader for various streaming services"
+hostmakedepends="python3-setuptools"
+depends="python3-Flask python3-Flask-Login python3-Pillow python3-mutagen python3-pyqt6 python3-pyqt6-sip python3-requests python3-urllib3 yt-dlp librespot python3-music-tag python3-pywidevine python3-m3u8"
+maintainer="Worf <snowy@riseup.net>"
+license="GPL-2.0-or-later"
+homepage="https://github.com/ots-downloader/onthespot"
+distfiles="https://github.com/ots-downloader/onthespot/archive/refs/tags/v${version}.tar.gz"
+checksum=147d533ee2fddce27739419a51079e1e131ca026ba490d2cb635891e72966ff9
