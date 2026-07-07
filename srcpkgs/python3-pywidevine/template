@@ -1,0 +1,15 @@
+# Template file for 'python3-pywidevine'
+pkgname=python3-pywidevine
+version=1.9.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core"
+makedepends=""
+depends="python3-Unidecode python3-click python3-protobuf python3-pycryptodome python3-requests python3-yaml python3-pymp4"
+short_desc="Python implementation of Widevine DRM decryption module"
+maintainer="Worf <snowy@riseup.net>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/devine-dl/pywidevine"
+changelog="https://raw.githubusercontent.com/devine-dl/pywidevine/refs/heads/master/CHANGELOG.md"
+distfiles="https://github.com/devine-dl/pywidevine/archive/refs/tags/v${version}.tar.gz"
+checksum=fcc96f5bfb3bd714d9775605983cbf44abd6463ff9551e3593ac1f818f5adbce

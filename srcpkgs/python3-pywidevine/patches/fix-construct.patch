@@ -1,0 +1,22 @@
+diff --git b/pywidevine/device.py a/pywidevine/device.py
+index 072146f..afa438b 100644
+--- b/pywidevine/device.py
++++ a/pywidevine/device.py
+@@ -33,7 +33,7 @@ class _Structures:
+     # - Removed vmp and vmp_len as it should already be within the Client ID
+     v2 = Struct(
+         "signature" / magic,
+-        "version" / Const(2, Int8ub),
++        "version" / Const(Int8ub, 2),
+         "type_" / CEnum(
+             Int8ub,
+             **{t.name: t.value for t in DeviceTypes}
+@@ -52,7 +52,7 @@ class _Structures:
+     # - Removed system_id as it can be retrieved from the Client ID's DRM Certificate
+     v1 = Struct(
+         "signature" / magic,
+-        "version" / Const(1, Int8ub),
++        "version" / Const(Int8ub, 1),
+         "type_" / CEnum(
+             Int8ub,
+             **{t.name: t.value for t in DeviceTypes}
