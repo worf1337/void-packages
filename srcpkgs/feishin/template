@@ -1,6 +1,6 @@
 # Template file for 'feishin'
 pkgname=feishin
-version=1.8.0
+version=1.15.1
 revision=1
 hostmakedepends="pnpm"
 short_desc="Modern Navidrome and Jellyfin music client."
@@ -8,7 +8,7 @@ maintainer="Worf <me@worf.win>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/jeffvli/feishin"
 distfiles="https://github.com/jeffvli/feishin/archive/refs/tags/v${version}.tar.gz"
-checksum=f9bc396c3d3418da255b91c998d09c37ad1ad3c2049388a176874f1b357b841b
+checksum=2401e438c144a2bd1aaee1fc3e6bb6e42b38264341400ddb80abf2b6a768a0f0
 
 do_build() {
 	pnpm i --frozen-lockfile
